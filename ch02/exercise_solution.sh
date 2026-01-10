@@ -11,7 +11,7 @@ if [[ -z "${NAME}" ]] || [[ -z "${DOMAIN}" ]]; then
 fi
 
 # Write CSV header to the file
-echo "status,name,domain,timestamp" > ${OUTPUT_FILE}
+echo "status,name,domain,timestamp" > "${OUTPUT_FILE}"
 
 if ping -c 1 "${DOMAIN}" &> /dev/null; then
   echo "success,${NAME},${DOMAIN},$(date)" >> "${OUTPUT_FILE}"
